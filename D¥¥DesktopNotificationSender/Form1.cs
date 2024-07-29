@@ -19,7 +19,11 @@ namespace D__DesktopNotificationSender
 
         private void EndToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var buttonResult =
+                MessageBox.Show("終了しますか？",
+                                "確認",
+                                MessageBoxButtons.YesNo);
+            if (buttonResult == DialogResult.Yes) Application.Exit();
         }
     }
 }
